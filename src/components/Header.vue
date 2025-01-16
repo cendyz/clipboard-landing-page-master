@@ -1,11 +1,7 @@
 <script setup>
 import logo from '../images/logo.svg'
 import patternMobile from '../images/bg-header-mobile.png'
-import { reactive } from 'vue'
-const btns = reactive({
-	one: 'iOS',
-	two: 'Mac',
-})
+import Btns from './Btns.vue'
 </script>
 
 <template>
@@ -18,11 +14,7 @@ const btns = reactive({
 			Clipboard allows you to track and organize everything you copy.
 			Instantly access your clipboard on all your devices.
 		</p>
-		<div class="btns-box">
-			<button v-for="(value, index) in btns" :key="index" class="btn">
-				Download for {{ value }}
-			</button>
-		</div>
+		<Btns />
 	</header>
 </template>
 
@@ -54,27 +46,6 @@ const btns = reactive({
 	margin: 1em 0 3em 0;
 	color: $grayish-blue;
 	font-size: 1.7rem;
-}
-
-.btns-box {
-	display: grid;
-	row-gap: 1.5em;
-}
-
-.btn {
-	display: block;
-	margin: 0 auto;
-	width: 100%;
-	font-size: 1.6rem;
-	color: white;
-	padding: 0.7em 0;
-	background-color: $strong-cyan;
-	border-radius: 1.5em;
-	border-bottom: 3px solid hsl(171, 67%, 24%);
-
-	&:nth-child(2) {
-		background-color: $light-blue;
-		border-bottom: 3px solid hsl(233, 46%, 27%);
-	}
+    line-height: 1.5;
 }
 </style>
