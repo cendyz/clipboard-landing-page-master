@@ -30,23 +30,25 @@ const iconsData = ref({
 
 <template>
 	<footer class="footer">
-		<img :src="logo" alt="Logo company C" class="logo" />
-		<div class="linksBox">
-			<a
-				href="#"
-				class="link"
-				v-for="(value, index) in linksData"
-				:key="index"
-				>{{ value.text }}</a
-			>
-		</div>
-		<div class="iconsBox">
-			<img
-				:src="value.icon"
-				:alt="value.atl"
-				class="icon"
-				v-for="(value, index) in iconsData"
-				:key="index" />
+		<div class="wrapper">
+			<img :src="logo" alt="Logo company C" class="logo" />
+			<div class="linksBox">
+				<a
+					href="#"
+					class="link"
+					v-for="(value, index) in linksData"
+					:key="index"
+					>{{ value.text }}</a
+				>
+			</div>
+			<div class="iconsBox">
+				<img
+					:src="value.icon"
+					:alt="value.atl"
+					class="icon"
+					v-for="(value, index) in iconsData"
+					:key="index" />
+			</div>
 		</div>
 	</footer>
 </template>
@@ -80,5 +82,52 @@ const iconsData = ref({
 	justify-content: center;
 	align-items: center;
 	column-gap: 2em;
+}
+
+@media (min-width: 992px) {
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		column-gap: 8em;
+	}
+
+	.logo {
+		width: 7%;
+		margin: 0;
+	}
+
+	.linksBox {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		column-gap: 5em;
+		height: 4.25em;
+	}
+
+	.link {
+		text-align: left;
+		transition: color 0.2s;
+
+		&:hover {
+			color: $strong-cyan;
+		}
+	}
+
+	.icon {
+		cursor: pointer;
+		filter: 0;
+		transition: filter 0.2s;
+
+		&:hover {
+			filter: invert(60%) sepia(26%) saturate(1109%) hue-rotate(121deg)
+				brightness(97%) contrast(87%);
+		}
+	}
+
+	.iconsBox {
+		margin-left: auto;
+	}
 }
 </style>

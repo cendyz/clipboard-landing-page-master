@@ -14,4 +14,10 @@ body {
 	font-family: 'Bai Jamjuree', serif;
 	font-size: 1.6rem;
 }
+
+.wrapper {
+	width: 100%;
+	max-width: 1220px;
+	margin: 0 auto;
+}
 </style>

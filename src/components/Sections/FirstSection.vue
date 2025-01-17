@@ -20,15 +20,22 @@ const content = reactive({
 <template>
 	<section class="section">
 		<h2 class="secondTitle">Keep track of your snippets</h2>
-		<p class="desc">
+		<p class="desc desc--top">
 			Clipboard instantly stores any item you copy in the cloud, meaning
 			you can access your snippets immediately on all your devices. Our Mac
 			and iOS apps will help you organize everything.
 		</p>
-		<img :src="img" alt="Computer monitor" class="img" />
-		<div class="textBox" v-for="(value, index) in content" :key="index">
-			<h3 class="thirdTitle">{{ value.title }}</h3>
-			<p class="desc">{{ value.text }}</p>
+		<div class="box">
+			<img :src="img" alt="Computer monitor" class="img" />
+			<div class="contentBoxes">
+				<div
+					class="textBox"
+					v-for="(value, index) in content"
+					:key="index">
+					<h3 class="thirdTitle insideTitle">{{ value.title }}</h3>
+					<p class="desc second-desc">{{ value.text }}</p>
+				</div>
+			</div>
 		</div>
 	</section>
 </template>
@@ -37,4 +44,42 @@ const content = reactive({
 @include sectionStyles;
 @include loopedText;
 
+@media (min-width: 992px) {
+	.desc {
+		&--top {
+			margin: 0 auto;
+			width: 672px;
+		}
+	}
+	.box {
+		margin-top: 2em;
+		display: grid;
+		grid-template-columns: 0.5fr 0.5fr;
+		grid-template-rows: auto;
+		place-items: center;
+	}
+
+	.contentBoxes {
+		align-self: center;
+	}
+
+	.textBox {
+		margin: auto 0;
+		width: 350px;
+	}
+
+	.insideTitle,
+	.second-desc {
+		text-align: left;
+	}
+
+	.second-desc {
+		padding: 0;
+	}
+
+	.img {
+		margin: 3em 0 3em -3.5em;
+		width: 110%;
+	}
+}
 </style>

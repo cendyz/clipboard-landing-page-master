@@ -1,13 +1,13 @@
 <script setup>
 import FirstSection from './Sections/FirstSection.vue'
 import FourthSection from './Sections/FourthSection.vue';
-import SecondSection from './Sections/SecondSection.vue'
+import SecondSection from './Sections/SecondSection.vue';
 import ThirdSection from './Sections/ThirdSection.vue';
 import Footer from './Footer.vue';
 </script>
 
 <template>
-	<main class="main">
+	<main class="main wrapper">
 		<FirstSection />
 		<SecondSection />
         <ThirdSection />

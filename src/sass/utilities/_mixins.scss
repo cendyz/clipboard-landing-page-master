@@ -1,5 +1,6 @@
 @use './colors' as *;
 
+
 @mixin sectionStyles {
 	.section {
 		text-align: center;
@@ -22,6 +23,12 @@
 		margin-top: 5em;
 		display: block;
 		width: 100%;
+	}
+
+	@media (min-width: 992px) {
+		.secondTitle {
+			font-size: 3.2rem;
+		}
 	}
 }
 

@@ -30,18 +30,34 @@ const icons = ref({
 </script>
 
 <template>
-	<img
-		:src="value.icon"
-		:alt="value.alt"
-		v-for="(value, index) in icons"
-		:key="index"
-		class="img" />
+	<section class="section">
+		<img
+			:src="value.icon"
+			:alt="value.alt"
+			v-for="(value, index) in icons"
+			:key="index"
+			class="img" />
+	</section>
 </template>
 
 <style scoped lang="scss">
+.section {
+	display: flex;
+	flex-direction: column;
+	row-gap: 3em;
+}
+
 .img {
 	display: block;
 	margin: 0 auto;
 	width: 35%;
+}
+
+@media (min-width: 992px) {
+	.section {
+		flex-direction: row;
+		align-items: center;
+		column-gap: 6em;
+	}
 }
 </style>
