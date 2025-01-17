@@ -48,7 +48,7 @@ const content = reactive({
 	.desc {
 		&--top {
 			margin: 0 auto;
-			width: 672px;
+			width: 42em;
 		}
 	}
 	.box {
@@ -65,7 +65,7 @@ const content = reactive({
 
 	.textBox {
 		margin: auto 0;
-		width: 350px;
+		width: 21.875em;
 	}
 
 	.insideTitle,
@@ -78,8 +78,15 @@ const content = reactive({
 	}
 
 	.img {
-		margin: 3em 0 3em -3.5em;
-		width: 110%;
+		margin: 3em 0 3em -7em;
+		width: 120%;
+	}
+
+	@media (min-width: 1440px) {
+		.img {
+			margin-left: -13em;
+			width: 140%;
+		}
 	}
 }
 </style>
