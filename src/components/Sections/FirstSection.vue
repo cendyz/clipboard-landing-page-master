@@ -35,17 +35,6 @@ const content = reactive({
 
 <style scoped lang="scss">
 @include sectionStyles;
+@include loopedText;
 
-.thirdTitle {
-	color: $dark-grayish-blue;
-	font-size: 2rem;
-}
-
-.img {
-	margin-bottom: 4.5em;
-}
-
-.desc {
-	margin: 0.5em 0 2.5em 0;
-}
 </style>
